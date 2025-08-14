@@ -1,0 +1,86 @@
+/* Basic Page Styling */
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f6f8;
+    margin: 0;
+    padding: 0;
+}
+
+/* Container */
+.container {
+    max-width: 800px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    margin-top: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Heading */
+h1 {
+    text-align: center;
+    color: #2d3436;
+}
+
+h2 {
+    color: #0984e3;
+}
+
+/* Forms */
+form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+form input, form select, form button {
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+form button {
+    background-color: #0984e3;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+form button:hover {
+    background-color: #074e8c;
+}
+
+/* Table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+table th, table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+table th {
+    background-color: #0984e3;
+    color: white;
+}
+
+table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Total Amount */
+h2 {
+    margin-top: 20px;
+    padding: 10px;
+    background: #dfe6e9;
+    border-radius: 8px;
+    text-align: center;
+}

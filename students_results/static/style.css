@@ -1,0 +1,111 @@
+:root {
+  --bg: #f5f7fb;
+  --card: #ffffff;
+  --text: #2d3436;
+  --muted: #6c757d;
+  --primary: #4f46e5;
+  --primary-600: #4338ca;
+  --success: #118a42;
+  --danger: #d90429;
+  --border: #e8eaf0;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.container {
+  max-width: 1100px;
+  margin: 32px auto;
+  padding: 0 16px;
+}
+
+h1 { text-align: center; margin-bottom: 24px; }
+h2 { margin: 0 0 12px 0; }
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 16px;
+  margin-bottom: 18px;
+  box-shadow: 0 6px 18px rgba(43,53,84,0.06);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.grid input {
+  padding: 10px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+button, .secondary, .danger, select {
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  font-size: 14px;
+}
+
+button {
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+button:hover { background: var(--primary-600); }
+
+.filters {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 10px;
+  align-items: center;
+}
+.filters input, .filters select { padding: 10px; }
+
+.secondary {
+  display: inline-block;
+  text-decoration: none;
+  text-align: center;
+  color: var(--text);
+  background: #eef1ff;
+}
+.secondary:hover { background: #e1e6ff; }
+
+.stats {
+  margin-top: 10px;
+  display: flex;
+  gap: 16px;
+  color: var(--muted);
+}
+
+.table-wrap { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; }
+th, td {
+  border-bottom: 1px solid var(--border);
+  padding: 10px;
+  text-align: center;
+}
+thead th {
+  background: #f3f4fa;
+  font-weight: 600;
+}
+tr:hover { background: #fafbff; }
+
+.pass { color: var(--success); font-weight: 600; }
+.fail { color: var(--danger); font-weight: 600; }
+
+.hint { color: var(--muted); margin-top: 6px; }
+@media (max-width: 800px) {
+  .grid { grid-template-columns: 1fr; }
+  .filters { grid-template-columns: 1fr 1fr; }
+}

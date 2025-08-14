@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX Calculator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>⚡ Instant Calculator</h1>
+
+        <form id="calcForm">
+            <input type="number" step="any" name="num1" placeholder="First number" required>
+            <input type="number" step="any" name="num2" placeholder="Second number" required>
+
+            <select name="operation">
+                <option value="add">Addition (+)</option>
+                <option value="subtract">Subtraction (-)</option>
+                <option value="multiply">Multiplication (×)</option>
+                <option value="divide">Division (÷)</option>
+            </select>
+
+            <button type="submit">Calculate</button>
+        </form>
+
+        <div class="result" id="resultBox">
+            <h3>Result will appear here...</h3>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function(){
+            $("#calcForm").on("submit", function(e){
+                e.preventDefault(); // Stop page reload
+
+                $.ajax({
+                    url: "/calculate",
+                    type: "POST",
+                    data: $(this).serialize(),
+                    success: function(response){
+                        $("#resultBox").html("<h3>Result: " + response.result + "</h3>");
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
